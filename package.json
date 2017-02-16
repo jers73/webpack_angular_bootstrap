@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./config/webpack.dev.config.js",
+    "build": "webpack --config ./config/webpack.dev.config.js",
     "lint": "tslint ./src/**/*.ts"
   },
   "keywords": [],
