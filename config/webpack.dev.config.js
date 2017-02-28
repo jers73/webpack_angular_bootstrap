@@ -6,9 +6,8 @@ const webpack = require('webpack');
 const ChunkWebpack = webpack.optimize.CommonsChunkPlugin;
 const rootDir = path.resolve(__dirname, '..');
 
-const extractCss = new ExtractTextPlugin('stylesheets/[name].css');
+const extractCss = new ExtractTextPlugin('[name].css');
 
-console.log();
 module.exports = () => {
     return {
         devServer: {
@@ -121,8 +120,7 @@ module.exports = () => {
                 {
                     test: /\.scss$/,
                     use: extractCss.extract(['css-loader?sourceMap', 'sass-loader'])
-                },
-
+                }
             ],
 
         },
@@ -146,8 +144,8 @@ module.exports = () => {
             ),
         ],
         entry: {
-            'app': [path.resolve(rootDir, 'src', 'app', 'bootstrap')],
-            'vendor': [path.resolve(rootDir, 'src', 'app', 'vendor')],
+            'app': [path.resolve(rootDir, 'src', 'bootstrap')],
+            'vendor': [path.resolve(rootDir, 'src', 'vendor')],
         },
         output: {
 
